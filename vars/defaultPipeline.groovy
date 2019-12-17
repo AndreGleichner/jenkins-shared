@@ -48,11 +48,13 @@ def call(body) {
 		stages {
 			stage('Dump Infos') {
 				steps {
-					echo "JOB_NAME    = ${env.JOB_NAME}"
-					echo "BUILD_ID    = ${env.BUILD_ID}"
-					echo "WORKSPACE   = ${env.WORKSPACE}"
-					echo "BRANCH_NAME = ${env.BRANCH_NAME}"
-					echo "GIT_COMMIT  = ${env.GIT_COMMIT}"
+					echo """#############################
+JOB_NAME    = ${env.JOB_NAME}
+BUILD_ID    = ${env.BUILD_ID}
+WORKSPACE   = ${env.WORKSPACE}
+BRANCH_NAME = ${env.BRANCH_NAME}
+GIT_COMMIT  = ${env.GIT_COMMIT}
+#############################"""
 				}
 			}
 		}
