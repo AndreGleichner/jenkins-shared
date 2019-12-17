@@ -33,13 +33,13 @@ def call(body) {
 			buildDiscarder(logRotator(
 				// number of builds to keep
 				numToKeepStr:   config.buildNumsToKeep != 0 ? config.buildNumsToKeep : 
-								env.BRANCH_NAME == null ? -1 :
+								env.BRANCH_NAME == null ? '-1' :
 								env.BRANCH_NAME ==~ /master/ ? '100' :
 								env.BRANCH_NAME ==~ /(release|b2c|b2b)\/.+/ ? '100' :
 								env.BRANCH_NAME ==~ /(feature|bug)\/.+/ ? '5' : '1',
 				// number of days to keep builds
 				daysToKeepStr:  config.buildDaysToKeep != 0 ? config.buildDaysToKeep : 
-								env.BRANCH_NAME == null ? -1 :
+								env.BRANCH_NAME == null ? '-1' :
 								env.BRANCH_NAME ==~ /master/ ? '30' :
 								env.BRANCH_NAME ==~ /(release|b2c|b2b)\/.+/ ? '50' :
 								env.BRANCH_NAME ==~ /(feature|bug)\/.+/ ? '5' : '1',
